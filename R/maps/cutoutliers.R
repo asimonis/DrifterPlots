@@ -17,7 +17,8 @@ dist[c]= 0
 etime = as.numeric(difftime(data$dateTime[1:(c-1)],data$dateTime[2:c],units="hours"))
 etime[c] = 0
 speed = abs(dist/etime)
-
+data$speed<-speed
+data$dist<-dist
 outliers= which(speed>toofast | is.na(speed))
 
 if (length(outliers) > 0) {
