@@ -1,4 +1,4 @@
-source('C:/Users/anne.simonis.NMFS/Documents/code/Drifter-master/cutoutliers.R')
+source('C:/Users/anne.simonis.NMFS/Documents/GitHub/DrifterPlots/R/maps/cutoutliers.R')
 source('C:/Users/anne.simonis.NMFS/Documents/code/Drifter-master/map.comment.events.r')
 source('C:/Users/anne.simonis.NMFS/Documents/code/Drifter-master/Drift.map.events.r')
 source('C:/Users/anne.simonis.NMFS/Documents/code/Drifter-master/Drift.map.comment.events.r')
@@ -18,6 +18,13 @@ map.events(outfilename = "EventMap", station.numbers=c(8),
            DBDir='D:/Click Analysis/Alex Databases',
            DriftFile='Drift_Dolphins_FileLookup.csv',DriftPositions='D:/code/CCE Map Data/DriftPositions.rda',
            extent="CCES",figtitle='Drifts 8',SpColor=c('red'))
+
+map.eventsBp(outfilename = "EventMap", station.numbers=c(7,8,10,12,13,14,16,18,19,20,21,22,23),
+           speciesID=list(c("fin whale")),
+           MapDir='C:/Users/anne.simonis.NMFS/Documents/ADRIFT/Fin whales/Maps',
+           DBDir='C:/Users/anne.simonis.NMFS/Documents/ADRIFT/Fin whales/Databases',
+           DriftFile='FinWhale_FileLookup.csv',DriftPositions='C:/Users/anne.simonis.NMFS/Documents/ADRIFT/Fin whales/Maps/DriftPositions.rda',
+           extent="CCES",figtitle='Fin Whales',SpColor=c('red'))
 
 
 

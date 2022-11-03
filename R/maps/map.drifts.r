@@ -74,18 +74,23 @@ map.drifts <- function(outfilename, station.numbers = NULL, speciesID, MapDir=NU
   
   # combine GPS locations from multiple csv files into a single table, with most recent data at the top
   spotcsv = read.csv(spotcsvfile[[1]][1],header=FALSE,stringsAsFactors=FALSE,sep=",", dec=".")
+  spotcsv$dateTime = as.POSIXct(spotcsv$V1,"%m/%d/%Y %H:%M:%S",tz="UTC")
   
   if(ncsvfiles>1){
     for(p in 2:ncsvfiles){
       nextspot = read.csv(spotcsvfile[[1]][p],header=FALSE,stringsAsFactors=FALSE,sep=",")
       nextspot$V4 <-as.numeric(nextspot$V4)
       nextspot$V5 <-as.numeric(nextspot$V5)
+      if(is.na(as.POSIXct(nextspot$V1[1],"%m/%d/%Y %H:%M:%S",tz="UTC"))){
+        nextspot$dateTime = as.POSIXct(nextspot$V1,"%m/%d/%Y %H:%M",tz="UTC")
+      }else{
+      nextspot$dateTime = as.POSIXct(nextspot$V1,"%m/%d/%Y %H:%M:%S",tz="UTC")}
       spotcsv = rbind(spotcsv,nextspot)}
     if(!is.null(station.numbers)){  # if user has specified only a subset of DASBRs, this filters the data accordingly
       spotcsv = spotcsv[spotcsv$V2 %in% lookup$spot.number[lookup$station %in% station.numbers] , ]
     }}
-  colnames(spotcsv) = c("dateTime", "spotID", "readingType", "lat", "long")
-  spotcsv$dateTime = strptime(spotcsv$dateTime, "%m/%d/%y %H:%M")
+  spotcsv = rename(spotcsv,"spotID"=V2, "readingType"=V3, "lat"=V4, "long"=V5)
+  # spotcsv$dateTime = strptime(spotcsv$dateTime, "%m/%d/%y %H:%M")
   n.stations = length(station.numbers)
   
   #Read in Drift Database lookup for Event Info
@@ -111,8 +116,8 @@ map.drifts <- function(outfilename, station.numbers = NULL, speciesID, MapDir=NU
   #Loop through data for each station and plot DASBR tracks
   for(n in 1:n.stations){
     # spot data for station n
-    data.n <- spotcsv[spotcsv$spotID %in% lookup$spot.number[lookup$station==station.numbers[n]], 1:5]  
-    data.n$dateTime<-as.POSIXct(data.n$dateTime,tz="UTC")
+    data.n <- filter(spotcsv,spotID %in% lookup$spot.number[lookup$station==station.numbers[n]]) %>%
+                     select(dateTime,spotID,lat,long)
     
     # truncate data to only include location records while DASBR was deployed, and plot the tracks
     LookupInd<-which(lookup$station==station.numbers[n]) 
@@ -176,5 +181,7 @@ map.drifts <- function(outfilename, station.numbers = NULL, speciesID, MapDir=NU
   legend('topright', legend=c("Recovered","Lost"),lty=1,cex=.75, col=c("black","gray"), bg="white")
   
   dev.off()
-
+  
+  if(SaveTracks==TRUE){
+    save(AllTracks,file=paste0(outfilename,'.rda'))}
 }
