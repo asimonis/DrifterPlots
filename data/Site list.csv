@@ -1,0 +1,17 @@
+Site Code,Site,Description,N Border,S Border
+WAS,Washington,WA/Canada border to N of Columbia River,48.50 N ,47.10 N
+COL,Columbia River,N to S of Columbia River ,47.10 N,45.00 N
+ORE,Oregon,S of Columbia River to OR/CA border,45.00 N,42.00 N
+CRC,Crescent City,Oregon Border to Trinidad,42.00 N,41.03 N
+TRI,Trinidad,Trinidad to Cape Mendocino,41.03 N,40.26 N
+MND,Mendocino,Cape Mendocino to Point Arena,40.26 N,38.57 N
+PTA,Point Area,Point Arena to Bodega Bay,38.57 N,38.18 N
+SFB,SF Bay,Bodega Bay to Half Moon Bay,38.18 N,37.30 N
+HMB,Half Moon Bay,Half Moon Bay to Santa Cruz,37.30 N,37.00 N
+MBY,Monterey Bay,Santa Cruz to Cambria,37.00 N,35.33 N
+MOB,Morro Bay,Cambria to Pt Conception,35.33 N,34.27 N
+CHI,Channel Islands,Pt Conception to Malibu,34.27 N,34.30 N
+LAB,Los Angeles Basin,Malibu to Dana Point/Catalina,34.30 N,33.27 N
+SND,San Diego,Dana Point/Catalina to TJ,33.27 N,32.31 N
+BCN,Baja California Norte,TJ To Cedros,32.31 N,28.10 N
+BCS,Baja California Sur,Cedros to Cabo,28.10 N,22.50 N

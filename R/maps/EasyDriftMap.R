@@ -8,9 +8,9 @@
 #station.numbers = vector of station numbers to drift
 
 EasyDriftMap<-function(ClickEventFile = 'D:/Analysis/Acoustic Studies/Alex_CCES_ClickEvents.rda',
-                  DriftTrackFile='D:/Analysis/Acoustic Studies/DriftTracks.csv',
+                  DriftTrackFile='D:/Analysis/CCES/CCES2018_DriftTracks.rda',
                   extent='CCES',
-                  savedir='D:/Analysis/Acoustic Studies/',
+                  savedir='D:/Analysis/CCES/Odonotocetes/Dolphins_SpermWhale/Acoustic Studies/EventLocations',
                   speciesID=c('LO','GG','UD'),
                   station.numbers=c(7,8,14)){
 
@@ -56,12 +56,11 @@ blues<-c("royalblue4","royalblue3",
 greys<-c(grey(0.8),grey(0.93),grey(0.99))
 
 #Load Drifter Tracks
-DriftTracks<-read.csv(DriftTrackFile)
-DriftTracks$dateTime<-as.POSIXct(DriftTracks$dateTime,format='%m/%d/%Y %H:%M',tz='UTC')
+load(DriftTrackFile)
 
-DriftTracks07<-IDrift(distinct(filter(DriftTracks,station==7)))
-DriftTracks08<-IDrift(distinct(filter(DriftTracks,station ==8)))
-DriftTracks14<-IDrift(distinct(filter(DriftTracks,station ==14)))
+DriftTracks07<-IDrift(distinct(filter(AllTracks,station==7)))
+DriftTracks08<-IDrift(distinct(filter(AllTracks,station ==8)))
+DriftTracks14<-IDrift(distinct(filter(AllTracks,station ==14)))
 
 #Load Acoustic Event Data
 load(ClickEventFile)

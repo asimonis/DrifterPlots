@@ -23,7 +23,7 @@ sqlite <- dbDriver("SQLite")
 # SpColor = a list of colors to use to plot event types; defaults to list of 9 contrasting colors
 
 map.events <- function(outfilename, station.numbers = NULL, speciesID, MapDir=NULL,DBDir=NULL, 
-                         DriftFile='Drift_FileLookup.csv', DriftPositions='G:/code/CCE Map Data/DriftPositions.rda', 
+                         DriftFile='Drift_FileLookup.csv', DriftPositions='H:/code/CCE Map Data/DriftPositions.rda', 
                          extent="CCES",figtitle=NULL,SpColor=NULL){
   
   if(is.null(MapDir)){
