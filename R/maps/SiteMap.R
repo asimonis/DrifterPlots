@@ -15,9 +15,9 @@ CCESm<-get_stamenmap(CCES, zoom = 5, maptype = "toner-lite")
   
 #Plot
 ggmap(CCESm) +  
-  geom_hline(data=Sites,aes(yintercept=Sites$N.Border,colour=factor(Site)))+
-  geom_hline(data=Sites,aes(yintercept=Sites$S.Border,colour=factor(Site)))+
-  geom_text(data=Sites,aes(x=rep(-130,16),y=S.Border,label=Site),size=1.5,nudge_y =.1 )+
+  geom_hline(data=Sites,aes(yintercept=N.Border,colour=factor(Site)))+
+  geom_hline(data=Sites,aes(yintercept=S.Border,colour=factor(Site)))+
+  geom_text(data=Sites,aes(x=rep(-130,15),y=S.Border,label=Site),size=1.5,nudge_y =.1 )+
   theme(legend.position = 'none')
 
 

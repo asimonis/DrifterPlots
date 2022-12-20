@@ -8,10 +8,9 @@ MND,Mendocino,Cape Mendocino to Point Arena,40.26 N,38.57 N
 PTA,Point Area,Point Arena to Bodega Bay,38.57 N,38.18 N
 SFB,SF Bay,Bodega Bay to Half Moon Bay,38.18 N,37.30 N
 HMB,Half Moon Bay,Half Moon Bay to Santa Cruz,37.30 N,37.00 N
-MBY,Monterey Bay,Santa Cruz to Cambria,37.00 N,35.33 N
-MOB,Morro Bay,Cambria to Pt Conception,35.33 N,34.27 N
-CHI,Channel Islands,Pt Conception to Malibu,34.27 N,33.53
-LAB,Los Angeles Basin,Malibu to Dana Point/Catalina,33.53,33.27 N
-SND,San Diego,Dana Point/Catalina to TJ,33.27 N,32.31 N
+MBY,Monterey Bay,Santa Cruz to Cambria,37.00 N,35.56 N
+MOB,Morro Bay,Cambria to Pt Conception,35.56 N,34.45 N
+CHI,Channel Islands,Pt Conception to Dana Point/Catalina,34.45 N,33.14 N
+SND,San Diego,Dana Point/Catalina to TJ,33.14 N,32.31 N
 BCN,Baja California Norte,TJ To Cedros,32.31 N,28.10 N
 BCS,Baja California Sur,Cedros to Cabo,28.10 N,22.50 N
