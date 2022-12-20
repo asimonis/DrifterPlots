@@ -11,7 +11,7 @@ Sites$N.Border<-as.numeric(substr(Sites$N.Border,1,5))
 Sites$S.Border<-as.numeric(substr(Sites$S.Border,1,5))
 
 CCES <- c(left = -132, bottom = 27, right = -114, top = 50)
-CCESm<-get_stamenmap(us, zoom = 5, maptype = "toner-lite")
+CCESm<-get_stamenmap(CCES, zoom = 5, maptype = "toner-lite")
   
 #Plot
 ggmap(CCESm) +  
