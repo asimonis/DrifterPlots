@@ -20,11 +20,11 @@ library(lunar)
 #############################################################################
 #Define required inputs
 #1.Drift Positions 
-DriftData<-load('F:/code/CCE Map Data/DriftPositions.rda')
+DriftData<-load('H:/code/CCE Map Data/DriftPositions.rda')
 #2. Pamguard database
 DriftDB<-file.choose()
 #3. Define station number and species to plot
-station.numbers=8
+station.numbers=7
 SPLabels<-c('UD')
 #4. Define folder to save plots
 savedir<-'D:/Click Analysis/Acoustic Events'

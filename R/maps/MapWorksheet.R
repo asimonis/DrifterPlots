@@ -1,8 +1,9 @@
-source('C:/Users/anne.simonis.NMFS/Documents/GitHub/DrifterPlots/R/maps/cutoutliers.R')
-source('C:/Users/anne.simonis.NMFS/Documents/code/Drifter-master/map.comment.events.r')
-source('C:/Users/anne.simonis.NMFS/Documents/code/Drifter-master/Drift.map.events.r')
-source('C:/Users/anne.simonis.NMFS/Documents/code/Drifter-master/Drift.map.comment.events.r')
-source('C:/Users/anne.simonis.NMFS/Documents/code/Drifter-master/map.events.r')
+source('C:/Users/anne.simonis/Documents/GitHub/DrifterPlots/R/maps/cutoutliers.R')
+source('C:/Users/anne.simonis/Documents/GitHub/DrifterPlots/R/maps/map.comment.events.r')
+source('C:/Users/anne.simonis/Documents/GitHub/DrifterPlots/R/maps/Drift.map.events.r')
+source('C:/Users/anne.simonis/Documents/GitHub/DrifterPlots/R/maps/Drift.map.comment.events.r')
+source('C:/Users/anne.simonis/Documents/GitHub/DrifterPlots/R/maps/map.events.r')
+source('C:/Users/anne.simonis/Documents/GitHub/DrifterPlots/R/maps/map.drifts.r')
 
 #Create a single map with multiple drifts and events
 # map.events(outfilename = "DASBRmap_Alldrifts", station.numbers=c(4,7,8,10,12,13,14,16,17,18,19,20,21,22,23),
@@ -21,15 +22,15 @@ map.events(outfilename = "EventMap", station.numbers=c(8),
 
 map.eventsBp(outfilename = "EventMap", station.numbers=c(7,8,10,12,13,14,16,18,19,20,21,22,23),
            speciesID=list(c("fin whale")),
-           MapDir='C:/Users/anne.simonis.NMFS/Documents/ADRIFT/Fin whales/Maps',
-           DBDir='C:/Users/anne.simonis.NMFS/Documents/ADRIFT/Fin whales/Databases',
-           DriftFile='FinWhale_FileLookup.csv',DriftPositions='C:/Users/anne.simonis.NMFS/Documents/ADRIFT/Fin whales/Maps/DriftPositions.rda',
+           MapDir='C:/Users/anne.simonis/Documents/ADRIFT/Fin whales/Maps',
+           DBDir='C:/Users/anne.simonis/Documents/ADRIFT/Fin whales/Databases',
+           DriftFile='FinWhale_FileLookup.csv',DriftPositions='C:/Users/anne.simonis/Documents/ADRIFT/Fin whales/Maps/DriftPositions.rda',
            extent="CCES",figtitle='Fin Whales',SpColor=c('red'))
 
 
 
 #Create map of all drifts without any events 
-map.drifts(outfilename = "Alldrifts", station.numbers=c(1:23),
+map.drifts(outfilename = "Alldrifts", station.numbers=c(4,7,8,10,12:23),
                  MapDir='C:/Users/anne.simonis/Documents/CCE DASBR/code/CCE Map Data',
                  spotcsvfile = list(c("DASBRs 1 to 6 - July 4 1700 to Aug 1 1700.csv", "DASBRs 1 to 7 - July 31 1700 to Aug 8 1700.csv",
                                       "DASBRs 1 to 10 - Aug 8 1700 to Aug 26 1700.csv", "DASBRs 1 to 13 - Aug 26 1700 to Sep 12 1700.csv",
