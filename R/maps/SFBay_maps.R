@@ -38,7 +38,7 @@ SFmap <- function(outfilename = 'Map', station.numbers = c('ADRIFT_034','ADRIFT_
   # define boundaries of the map
   if(extent=="CCES"){lon1=-132;lon2=-114;lat1=27;lat2=50}
   if(extent=="US") {lon1=-132;lon2= -116;lat1=30;lat2=50}
-  if(extent=="SF") {lon1= -124;lon2= -122.2;lat1=38.4;lat2=36.8}
+  if(extent=="SF") {lon1= -124;lon2= -122.2;lat1=38.4;lat2=37.1}
   if(extent=="Bodega") {lon1= -124;lon2= -122.7;lat1=38.5;lat2=37.7}
   if(extent=="Other"){
     lon1<-readline('Please enter the left boundary of the map [-180:180]: ')
@@ -80,7 +80,7 @@ GPSData$UTC<-as.POSIXct(GPSData$UTC,tz='UTC')
     plot(bat, deep=-1000, shallow=-1000, step=0, lwd=0.5, drawlabel=TRUE, add=TRUE)
     
     #Import Sanctuary Boundaries
-    dataPath <- 'C:/Users/anne.simonis.NMFS/Documents/code/Maps'
+    dataPath <- 'C:/Users/anne.simonis/Documents/code/Maps'
     mbnms <- readRDS(file.path(dataPath, 'MBNMS_Bounds.rda'))
     plot(mbnms$geometry, add=TRUE, border='gray60', lwd=1,lty=3)
     
@@ -94,7 +94,7 @@ GPSData$UTC<-as.POSIXct(GPSData$UTC,tz='UTC')
     
     
     #Loop through data for each station and plot DASBR tracks
-    drifterColors = c('#FCFDBFFF',"#9F2F7FFF")
+    drifterColors = c('#FCFDBFFF',"cyan")
     for(n in 1:n.stations){
       data.n.trunc<- filter(GPSData, DriftName==station.numbers[n])
       
@@ -115,7 +115,7 @@ GPSData$UTC<-as.POSIXct(GPSData$UTC,tz='UTC')
       # add station number labels
       #Offset parameter moves text label slightly away from deployment point; User may need to adjust offset for different map boundaries 
       offsetV<- 0
-      offsetH<- -0.05
+      offsetH<- -0.07
       # if(station.numbers[n] %in% c('ADRIFT_035')){offsetH<-.15}
       text(data.n.trunc$Longitude[2]+offsetH, data.n.trunc$Latitude[2]+offsetV,
            labels=gsub('ADRIFT_0','',station.numbers[n]), cex=1,col=drifterColors[n])
