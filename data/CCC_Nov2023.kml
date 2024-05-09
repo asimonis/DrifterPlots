@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="MyData" id="MyData">
+	<SimpleField name="Longitude" type="float"></SimpleField>
+	<SimpleField name="Latitude" type="float"></SimpleField>
+	<SimpleField name="ID" type="float"></SimpleField>
+</Schema>
+<Folder><name>MyData</name>
+  <Placemark>
+	<name>-121.636278</name>
+	<description>35.62906</description>
+	<ExtendedData><SchemaData schemaUrl="#MyData">
+		<SimpleData name="Longitude">1</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.636278,35.62906</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-121.7543558</name>
+	<description>35.62906</description>
+	<ExtendedData><SchemaData schemaUrl="#MyData">
+		<SimpleData name="Longitude">2</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.7543558,35.62906</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-121.8505283</name>
+	<description>35.62906</description>
+	<ExtendedData><SchemaData schemaUrl="#MyData">
+		<SimpleData name="Longitude">3</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.8505283,35.62906</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-121.9478373</name>
+	<description>35.62906</description>
+	<ExtendedData><SchemaData schemaUrl="#MyData">
+		<SimpleData name="Longitude">4</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.9478373,35.62906</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-121.9478373</name>
+	<description>35.542721</description>
+	<ExtendedData><SchemaData schemaUrl="#MyData">
+		<SimpleData name="Longitude">5</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.9478373,35.542721</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-121.8505283</name>
+	<description>35.542721</description>
+	<ExtendedData><SchemaData schemaUrl="#MyData">
+		<SimpleData name="Longitude">6</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.8505283,35.542721</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-121.7543558</name>
+	<description>35.542721</description>
+	<ExtendedData><SchemaData schemaUrl="#MyData">
+		<SimpleData name="Longitude">7</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.7543558,35.542721</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<name>-121.636278</name>
+	<description>35.542721</description>
+	<ExtendedData><SchemaData schemaUrl="#MyData">
+		<SimpleData name="Longitude">8</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-121.636278,35.542721</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>
